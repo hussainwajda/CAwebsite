@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, type SetStateAction } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { Mail, Phone, ChevronDown, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -32,7 +32,6 @@ const navigationLinks = [
   },
   { name: "ABOUT US", href: "/about" },
   { name: "BLOGS", href: "/blogs" },
-  { name: "CAREERS", href: "/careers" },
   { name: "CONTACT US", href: "/contact" },
 ];
 
@@ -56,7 +55,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleLinkClick = (linkName) => {
+  const handleLinkClick = (linkName: SetStateAction<string>) => {
     setActiveLink(linkName);
     setIsMobileMenuOpen(false);
     setOpenServiceAccordion(false); // Close accordion when any link is clicked
@@ -103,7 +102,9 @@ export default function Header() {
               transition={{ duration: 0.2 }}
             >
               <div className="flex items-center gap-3">
-                <img src={logo} alt="Logo" className="w-80 h-80" />
+                <Link to="/">
+                  <img src={logo} alt="Logo" className="w-80 h-80" />
+                </Link>
               </div>
             </motion.div>
 
