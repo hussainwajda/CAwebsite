@@ -36,8 +36,6 @@ jobs:
             docker stop ca_vite-app || true
             docker rm ca_vite-app || true
 
-            docker rmi ca_vite-app || true
-
             # Build and run updated container
             docker build -t ca_vite-app .
-            docker run -d --dns 8.8.8.8 --restart unless-stopped --name vite-app -p 6000:80 ca_vite-app
+            docker run -d --dns 8.8.8.8 --restart unless-stopped --name ca_vite-app -p 6000:80 ca_vite-app
