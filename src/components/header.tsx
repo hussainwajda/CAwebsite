@@ -79,7 +79,7 @@ export default function Header() {
             </div>
             <div className="flex items-center gap-2">
               <Phone className="h-4 w-4" />
-              <span>+91-000000000</span>
+              <span>+91-xxxxxxxxxx</span>
             </div>
           </div>
         </div>
