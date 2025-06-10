@@ -5,35 +5,35 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 
 // Import react-icons for social platforms
 import { FaWhatsapp, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
-import { BsTwitterX } from "react-icons/bs"; // For the new Twitter 'X' logo
+import { BsInstagram } from "react-icons/bs"; // For the new Twitter 'X' logo
 
 // Contact options with proper icons
 const contactOptions = [
   {
     id: "phone",
-    icon: Phone, // Using Lucide-react for Phone
+    icon: Phone,
     label: "Call Us",
     href: "tel:+1234567890",
     className: "bg-green-500 hover:bg-green-600",
   },
   {
     id: "whatsapp",
-    icon: FaWhatsapp, // Replaced with react-icon
+    icon: FaWhatsapp,
     label: "WhatsApp",
     href: "https://wa.me/1234567890",
     className: "bg-green-400 hover:bg-green-500",
   },
   {
-    id: "twitter",
-    icon: BsTwitterX, // Replaced with react-icon for X
-    label: "Follow on X",
+    id: "Instagram",
+    icon: BsInstagram,
+    label: "Follow on Instagram",
     href: "https://twitter.com/yourhandle",
-    className: "bg-black hover:bg-gray-800",
+    className: "bg-gradient-to-br from-pink-500 to-violet-500 hover:bg-gray-800",
   },
   
   {
     id: "contact",
-    icon: FaEnvelope, // Replaced with react-icon
+    icon: FaEnvelope,
     label: "Contact Form",
     href: "/contact",
     className: "bg-blue-500 hover:bg-blue-600",

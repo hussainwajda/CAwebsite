@@ -21,7 +21,7 @@ const navigationLinks = [
       },
       {
         name: "Income Tax Return Filing & Compliances",
-        href: "/services/income-tax-return-filances",
+        href: "/services/income-tax-return-filing-compliances",
       },
       {
         name: "Scrutiny, Assessment & Appeals",
@@ -36,7 +36,9 @@ const navigationLinks = [
 ];
 
 export default function Header() {
-  const [activeLink, setActiveLink] = useState("HOME");
+  const [activeLink, setActiveLink] = useState(() => {
+    return localStorage.getItem("activeLink") || "HOME";
+  });
   const [isSticky, setIsSticky] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openServiceAccordion, setOpenServiceAccordion] = useState(false); // New state for accordion
@@ -57,6 +59,7 @@ export default function Header() {
 
   const handleLinkClick = (linkName: SetStateAction<string>) => {
     setActiveLink(linkName);
+    localStorage.setItem("activeLink", linkName.toString());
     setIsMobileMenuOpen(false);
     setOpenServiceAccordion(false); // Close accordion when any link is clicked
   };
@@ -119,7 +122,7 @@ export default function Header() {
                         ? "text-[#53b948]"
                         : "text-gray-700 hover:text-[#53b948]"
                     }`}
-                    onClick={() => setActiveLink(link.name)}
+                    onClick={() => handleLinkClick(link.name)}
                   >
                     {link.name}
                     {link.hasDropdown && (
