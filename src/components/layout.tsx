@@ -1,10 +1,10 @@
 // src/components/Layout.tsx
 import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
-import Header from './Header';
-import Footer from './Footer';
-import Preloader from './Preloader';
-import ContactWidget from './contact/ContactWidget';
+import Header from './header';
+import Footer from './footer';
+import Preloader from './preloader';
+import ContactWidget from './contact/contactWidget';
 import PageScroll from './scrollToTop';
 
 function Layout() {
