@@ -1,12 +1,22 @@
-# Dockerfile
+# Stage 1: Build the React/Vite app
+FROM node:18-alpine as builder
 
-FROM node:18 AS builder
 WORKDIR /app
-COPY . .
-RUN npm install --force
-RUN npm run build
 
-FROM nginx:alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY . .
+
+RUN npm install && npm run build
+
+# Stage 2: Serve with Caddy
+FROM caddy:alpine
+
+# Copy built files from builder stage
+COPY --from=builder /app/dist /usr/share/caddy
+
+# Optional: Copy your custom Caddyfile
+COPY Caddyfile /etc/caddy/Caddyfile
+
+# Expose the desired port (6000 in your case)
 EXPOSE 6000
-CMD ["nginx", "-g", "daemon off;"]
+
+CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
