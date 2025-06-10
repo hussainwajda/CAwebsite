@@ -17,6 +17,6 @@ COPY --from=builder /app/dist /usr/share/caddy
 COPY Caddyfile /etc/caddy/Caddyfile
 
 # Expose the desired port (6000 in your case)
-EXPOSE 6000
+EXPOSE 80
 
 CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
