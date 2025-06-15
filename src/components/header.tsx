@@ -75,11 +75,11 @@ export default function Header() {
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-sm">
             <div className="flex items-center gap-2">
               <Mail className="h-4 w-4" />
-              <span>cavinaykhambe@gmail.com</span>
+              <Link to="mailto:vpkhambeandassociates@gmail.com"><span>vpkhambeandassociates@gmail.com</span></Link>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="h-4 w-4" />
-              <span>+91-xxxxxxxxxx</span>
+              <Link to="tel:+918282826060"><span>+91 8282826060</span></Link>
             </div>
           </div>
         </div>

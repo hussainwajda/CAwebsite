@@ -2,8 +2,10 @@
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import image from "../../assets/about.jpg"
+import { useNavigate } from "react-router-dom"
 
 export default function AboutSection() {
+  const navigate = useNavigate();
   return (
     <section className="py-16 px-4 md:px-8 lg:px-16 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -50,10 +52,10 @@ export default function AboutSection() {
               className="space-y-4"
             >
               <p className="text-gray-600 leading-relaxed">
-                <strong>Vinay Khambe & Associates LLP, Chartered Accountant in Pune</strong> is a professionally
+                <strong>Vinay Khambe & Associates, Chartered Accountant in Pune</strong> is a professionally
                 managed firm catering to domestic and international clients with wide range of services in domestic and
-                international taxation, regulatory and advisory services and cross border transaction related services.
-                The team of JTA LLP is firm of CA in Vimannagar and has dedicated, experienced and expert professionals
+                taxation, regulatory and advisory services and many audit related services.
+                The team of VP Khambe & Associates is firm of CA in Pune and has dedicated, experienced and expert professionals
                 and associates like Chartered Accountants, Company Secretary and Consultants and high-end infrastructure
                 to provide end to end services to your business.
               </p>
@@ -74,6 +76,7 @@ export default function AboutSection() {
             >
               <Button
                 size="lg"
+                onClick={() => navigate("/about") }
                 className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded font-medium transition-colors duration-300"
               >
                 Read more

@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react"; // Importing relevant icons
 
@@ -32,8 +31,9 @@ export default function Footer() {
               ABOUT US
             </h3>
             <p className="text-sm leading-relaxed text-gray-200">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia sed veniam nulla repudiandae sit nesciunt temporibus nemo, adipisci sint! Accusamus consequatur blanditiis porro nihil aperiam atque eius architecto sequi quam sed, nobis eligendi nulla veritatis amet iste voluptatum commodi esse, repellat dolore accusantium cum sint laudantium ducimus? In quae delectus optio voluptatum sequi, numquam saepe, laboriosam hic maiores ut vel 
-            </p>
+                <strong>Vinay Khambe & Associates, Chartered Accountant in Pune</strong> is a professionally
+                managed firm catering to domestic and international clients with wide range of services in domestic and
+                taxation, regulatory and advisory services and many audit related services.            </p>
           </div>
 
           {/* Services Section */}
@@ -86,21 +86,20 @@ export default function Footer() {
               <div className="flex items-start text-sm text-gray-200">
                 <MapPin className="h-5 w-5 mr-3 text-[#53b948] flex-shrink-0 mt-0.5" />
                 <span>
-                  Lorem ipsum consequuntur velit rerum quis, porro illum distinctio, nesciunt possimus iste numquam.
-                  , Pune - 411044
+                  Office No. 102, G Wing, K K market, 4th floor, Dhankawadi, Pune :- 411043
                 </span>
               </div>
-              <div className="flex items-center text-sm text-gray-200">
+              <div className="flex items-center">
+                <Link to="tel:+918282826060" className="flex items-center text-sm text-gray-200">
                 <Phone className="h-4 text-[#53b948] w-4 mr-3" />
-                <span>+91 0000000000</span>
+                <span>+91 8282826060</span>
+                </Link>
               </div>
               <div className="flex items-center text-sm text-gray-200">
-                <Phone className="h-4 w-4 mr-3 text-[#53b948]" />
-                <span>+91 0000000000</span>
-              </div>
-              <div className="flex items-center text-sm text-gray-200">
-                <Mail className="h-4 w-4 mr-3 text-[#53b948]" />
-                <span>xxxxxxxxxxxxxx@gmail.com</span>
+                <Link to="mailto:vpkhambeandassociates@gmail.com" className="flex items-center">
+                  <Mail className="h-4 w-4 mr-3 text-[#53b948]" />
+                  <span>vpkhambeandassociates@gmail.com</span>
+                </Link>
               </div>
             </div>
           </div>

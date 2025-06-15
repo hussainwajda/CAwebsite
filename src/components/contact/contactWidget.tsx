@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 // Import react-icons for social platforms
-import { FaWhatsapp, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
+import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs"; // For the new Twitter 'X' logo
 
 // Contact options with proper icons
@@ -13,21 +13,21 @@ const contactOptions = [
     id: "phone",
     icon: Phone,
     label: "Call Us",
-    href: "tel:+1234567890",
+    href: "tel:+918282826060",
     className: "bg-green-500 hover:bg-green-600",
   },
   {
     id: "whatsapp",
     icon: FaWhatsapp,
     label: "WhatsApp",
-    href: "https://wa.me/1234567890",
+    href: "https://wa.me/+918282826060",
     className: "bg-green-400 hover:bg-green-500",
   },
   {
     id: "Instagram",
     icon: BsInstagram,
     label: "Follow on Instagram",
-    href: "https://twitter.com/yourhandle",
+    href: "https://instagram.com/ca_vinay_khambe",
     className: "bg-gradient-to-br from-pink-500 to-violet-500 hover:bg-gray-800",
   },
   

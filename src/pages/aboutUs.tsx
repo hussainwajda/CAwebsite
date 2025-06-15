@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Users, Award, TrendingUp, Shield, Clock, Star, Eye, Heart, Lightbulb } from "lucide-react"
+import { useNavigate } from "react-router-dom"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -27,6 +28,7 @@ const scaleIn = {
 }
 
 export default function AboutUsPage() {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -55,9 +57,9 @@ export default function AboutUsPage() {
                 About Us - CA in <span className="text-blue-600">Pune</span>
               </h1>
               <p className="text-lg text-slate-700 leading-relaxed mb-8">
-                Jitesh Telsora & Associates LLP is a CA Firm in Pune providing management consultancy services and
-                professional advice with each strand of services. We have been in the industry for many years and have
-                gained extensive experience and expertise in various fields.
+                <strong>Vinay Khambe & Associates, Chartered Accountant in Pune</strong> is a professionally
+                managed firm catering to domestic and international clients with wide range of services in domestic and
+                taxation, regulatory and advisory services and many audit related services.
               </p>
               <motion.div
                 className="flex flex-wrap gap-4"
@@ -114,7 +116,7 @@ export default function AboutUsPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Why Choose Jitesh Telsora and Associates LLP?
+              Why Choose VP Khambe & Associates?
             </h2>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto">
               We provide comprehensive CA services with a commitment to excellence, integrity, and client satisfaction.
@@ -225,18 +227,18 @@ export default function AboutUsPage() {
           >
             {[
               {
-                name: "CA Jitesh Telsora",
+                name: "CA Vinay Khambe",
                 title: "Founder & Managing Partner",
                 image: "https://icon-library.com/images/no-picture-available-icon/no-picture-available-icon-1.jpg",
                 description:
-                  "CA Jitesh Telsora is the founder and a Managing Partner. Jitesh has over 15 years of experience in taxation, auditing, and financial consulting. He specializes in corporate taxation, GST compliance, and business advisory services. Under his leadership, the firm has built a strong reputation for delivering high-quality services.",
+                  "CA Vinay Khambe is the founder and a Managing Partner. Vinay has over 10 years of experience in taxation, auditing, and financial consulting. He specializes in corporate taxation, GST compliance, and business advisory services. Under his leadership, the firm has built a strong reputation for delivering high-quality services.",
               },
               {
-                name: "CA Megha Sheth Telsora",
+                name: "----------------------",
                 title: "Partner & Financial Advisor",
                 image: "https://icon-library.com/images/no-picture-available-icon/no-picture-available-icon-1.jpg",
                 description:
-                  `CA Megha Sheth Telsora has been associated with our firm as an associate and later became a partner. She brings a wealth of experience in financial management and strategic planning. Her expertise lies in financial planning, investment advisory, and corporate restructuring. Megha is known for her analytical skills and attention to detail. `,
+                  `CA Vinay Khambe is the founder and a Managing Partner. Vinay has over 10 years of experience in taxation, auditing, and financial consulting. He specializes in corporate taxation, GST compliance, and business advisory services. Under his leadership, the firm has built a strong reputation for delivering high-quality services. `,
               },
             ].map((member, index) => (
               <motion.div key={index} variants={fadeInUp}>
@@ -331,6 +333,7 @@ export default function AboutUsPage() {
                 className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => navigate("/contact#form")}
               >
                 Schedule Consultation
               </motion.button>

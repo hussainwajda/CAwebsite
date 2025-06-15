@@ -1,15 +1,14 @@
-"use client"
-
 import type React from "react"
-
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import { MapPin, Clock, Mail, Phone, Send, CheckCircle, Icon } from "lucide-react"
+import { MapPin, Clock, Mail, Phone, Send, CheckCircle } from "lucide-react"
 import { BsFacebook, BsInstagram, BsLinkedin, BsTwitterX } from "react-icons/bs"
+import { Link } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -47,19 +46,43 @@ export default function ContactUsPage() {
     BsInstagram: BsInstagram,
   };
 
+  const location = useLocation();
+
+  useEffect(() => {
+    const scrollToForm = () => {
+      const hash = location.hash;
+      if (hash === "#form") {
+        const formElement = document.getElementById("contact-form");
+        if (formElement) {
+          formElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    };
+
+    // Slight delay to ensure DOM is rendered
+    setTimeout(scrollToForm, 100);
+  }, [location]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setFormStatus("submitting")
+  e.preventDefault()
+  setFormStatus("submitting")
 
-    // Simulate form submission
-    setTimeout(() => {
+  try {
+    const response = await fetch("https://formspree.io/f/xkgbbzvz", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+
+    if (response.ok) {
       setFormStatus("success")
-      // Reset form after success
       setTimeout(() => {
         setFormData({
           name: "",
@@ -69,8 +92,15 @@ export default function ContactUsPage() {
         })
         setFormStatus("idle")
       }, 3000)
-    }, 1500)
+    } else {
+      setFormStatus("error")
+    }
+  } catch (error) {
+    console.error(error)
+    setFormStatus("error")
   }
+}
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -133,7 +163,7 @@ export default function ContactUsPage() {
                         <div>
                           <h4 className="font-semibold text-slate-900 mb-1">Address Info</h4>
                           <p className="text-slate-600">
-                            B-228, Ganpati Theatre Business Park Near Airport Road, Vimannagar, Pune-411014
+                            Office No. 102, G Wing, K K market, 4th floor, Dhankawadi, Pune :- 411043
                           </p>
                         </div>
                       </div>
@@ -155,8 +185,8 @@ export default function ContactUsPage() {
                         </div>
                         <div>
                           <h4 className="font-semibold text-slate-900 mb-1">Email</h4>
-                          <p className="text-slate-600">Mobile: +91-7823217804 / +91-020-27892650</p>
-                          <p className="text-slate-600">Email: contact@example.com</p>
+                          <Link to="tel:+918282826060" ><p className="text-slate-600">Mobile: +91 8282826060</p></Link>
+                          <Link to="mailto:vpkhambeandassociates@gmail.com" ><p className="text-slate-600">Email: vpkhambeandassociates@gmail.com</p></Link>
                         </div>
                       </div>
                     </div>
@@ -170,7 +200,6 @@ export default function ContactUsPage() {
                     <h3 className="text-xl font-semibold text-slate-900 mb-4">Connect With Us</h3>
                     <div className="flex space-x-4">
                       {["BsFacebook", "BsTwitterX", "BsLinkedin", "BsInstagram"].map((socialKey) => {
-        // Get the actual component from the mapping object
                             const IconComponent = socialIconComponents[socialKey]; 
 
                             return (
@@ -190,7 +219,7 @@ export default function ContactUsPage() {
 
               <motion.div variants={fadeInUp} className="relative h-80 rounded-xl overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242118.14199614953!2d73.72287834316406!3d18.524564859944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1623825823264!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7568.851296786725!2d73.85028233990964!3d18.46436915703426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf1e0c8ba477%3A0xb74177f9ec39f4f4!2sV%20P%20Khambe%20%26%20Associates!5e0!3m2!1sen!2sin!4v1750003620489!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -204,7 +233,7 @@ export default function ContactUsPage() {
 
             {/* Contact Form - Right Side */}
             <motion.div variants={fadeIn} initial="initial" animate="animate">
-              <Card className="border-0 shadow-lg">
+              <Card className="border-0 shadow-lg" id="contact-form">
                 <CardContent className="p-8">
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold text-slate-900 mb-2">Send Your Message Us</h3>
