@@ -109,7 +109,7 @@ export default function Footer() {
       {/* Copyright Bar */}
       <div className="bg-[#10446b] py-6">
         <div className="container mx-auto px-4 text-center text-sm text-gray-300">
-          Copyrights © All rights reserved to Vinay Khambe & Associates LLP
+          Copyrights © All rights reserved to VP Khambe & Associates
         </div>
       </div>
     </footer>
