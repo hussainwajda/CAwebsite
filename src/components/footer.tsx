@@ -31,7 +31,7 @@ export default function Footer() {
               ABOUT US
             </h3>
             <p className="text-sm leading-relaxed text-gray-200">
-                <strong>Vinay Khambe & Associates, Chartered Accountant in Pune</strong> is a professionally
+                <strong>VP Khambe & Associates, Chartered Accountant in Pune</strong> is a professionally
                 managed firm catering to domestic and international clients with wide range of services in domestic and
                 taxation, regulatory and advisory services and many audit related services.            </p>
           </div>

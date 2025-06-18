@@ -233,24 +233,24 @@ export default function AboutUsPage() {
                 description:
                   "CA Vinay Khambe is the founder and a Managing Partner. Vinay has over 10 years of experience in taxation, auditing, and financial consulting. He specializes in corporate taxation, GST compliance, and business advisory services. Under his leadership, the firm has built a strong reputation for delivering high-quality services.",
               },
-              {
-                name: "----------------------",
-                title: "Partner & Financial Advisor",
-                image: "https://icon-library.com/images/no-picture-available-icon/no-picture-available-icon-1.jpg",
-                description:
-                  `CA Vinay Khambe is the founder and a Managing Partner. Vinay has over 10 years of experience in taxation, auditing, and financial consulting. He specializes in corporate taxation, GST compliance, and business advisory services. Under his leadership, the firm has built a strong reputation for delivering high-quality services. `,
-              },
+              // {
+              //   name: "----------------------",
+              //   title: "Partner & Financial Advisor",
+              //   image: "https://icon-library.com/images/no-picture-available-icon/no-picture-available-icon-1.jpg",
+              //   description:
+              //     `CA Vinay Khambe is the founder and a Managing Partner. Vinay has over 10 years of experience in taxation, auditing, and financial consulting. He specializes in corporate taxation, GST compliance, and business advisory services. Under his leadership, the firm has built a strong reputation for delivering high-quality services. `,
+              // },
             ].map((member, index) => (
               <motion.div key={index} variants={fadeInUp}>
                 <Card className="overflow-hidden hover:shadow-xl transition-all duration-300">
                   <div className="relative">
-                    <Img
+                    {/* <Img
                       src={member.image || "/placeholder.svg"}
                       alt={member.name}
                       width={300}
                       height={300}
                       className="w-full h-80 object-cover"
-                    />
+                    /> */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   </div>
                   <CardContent className="p-6">

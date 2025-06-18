@@ -52,7 +52,7 @@ export default function AboutSection() {
               className="space-y-4"
             >
               <p className="text-gray-600 leading-relaxed">
-                <strong>Vinay Khambe & Associates, Chartered Accountant in Pune</strong> is a professionally
+                <strong>VP Khambe & Associates, Chartered Accountant in Pune</strong> is a professionally
                 managed firm catering to domestic and international clients with wide range of services in domestic and
                 taxation, regulatory and advisory services and many audit related services.
                 The team of VP Khambe & Associates is firm of CA in Pune and has dedicated, experienced and expert professionals
