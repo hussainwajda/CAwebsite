@@ -5,7 +5,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm install --force && npm run build
+RUN npm install --force && npm run build --force
 
 # Stage 2: Serve with Caddy
 FROM caddy:alpine
