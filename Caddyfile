@@ -1,5 +1,7 @@
-:80
+:80 {
+    root * /usr/share/caddy
+    file_server
 
-root * /usr/share/caddy
-file_server
-try_files {path} /index.html
+    # SPA fallback: serve index.html for all routes except actual files or dirs
+    try_files {path} /index.html
+}
