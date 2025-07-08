@@ -1,11 +1,10 @@
-"use client"
-
 import { Img } from "react-image"
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Users, Award, TrendingUp, Shield, Clock, Star, Eye, Heart, Lightbulb } from "lucide-react"
 import { useNavigate } from "react-router-dom"
+import SEO from "@/components/SEO"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -30,6 +29,13 @@ const scaleIn = {
 export default function AboutUsPage() {
   const navigate = useNavigate();
   return (
+  <>  
+    <SEO 
+      title='About Us | VP Khambe & Associates'
+      description='Learn about our mission, values, and experienced team of chartered accountants dedicated to delivering tailored financial solutions for businesses and individuals.'
+      keywords='Chartered Accountant Services in Pune, CA near me, Best CA in Pune, VP Khambe & Associates, CA Vinay Khambe'
+      canonical='https://cavinaykhambe.in/about'
+    />
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <motion.nav
@@ -231,7 +237,7 @@ export default function AboutUsPage() {
                 title: "Founder & Managing Partner",
                 image: "https://icon-library.com/images/no-picture-available-icon/no-picture-available-icon-1.jpg",
                 description:
-                  "CA Vinay Khambe is the founder and a Managing Partner. Vinay has over 10 years of experience in taxation, auditing, and financial consulting. He specializes in corporate taxation, GST compliance, and business advisory services. Under his leadership, the firm has built a strong reputation for delivering high-quality services.",
+                  "CA Vinay Khambe is the founder and a Managing Partner. Vinay has over 5 years of experience in taxation, auditing, and financial consulting. He specializes in corporate taxation, GST compliance, and business advisory services. Under his leadership, the firm has built a strong reputation for delivering high-quality services.",
               },
               // {
               //   name: "----------------------",
@@ -349,5 +355,6 @@ export default function AboutUsPage() {
         </div>
       </section>
     </div>
+  </>
   )
 }

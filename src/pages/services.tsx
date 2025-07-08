@@ -9,6 +9,7 @@ import ServicesCarousel from '@/components/home/services';
 import GSTReturnFilingCompliances from '@/components/services/gstReturn';
 import IncomeTaxReturnFilingCompliances from '@/components/services/taxReturn';
 import ScurnityAssessmentPage from '@/components/services/scurnityAssessment';
+import SEO from '@/components/SEO';
 // import RERACompliances from './services/RERACompliances';
 
 const ServiceRouter: React.FC = () => {
@@ -17,6 +18,12 @@ const ServiceRouter: React.FC = () => {
   if (serviceName === undefined) {
     return (
       <>
+        <SEO
+          title='Our Services | VP Khambe & Associates'
+          description='Explore our full range of services including tax filing, auditing, GST compliance, business setup, and more.'
+          keywords='Chartered Accountant Services in Pune, CA near me, Best CA in Pune, VP Khambe & Associates, CA Vinay Khambe'
+          canonical='https://cavinaykhambe.in/services'
+        />
         <ServicesCarousel />
       </>
     );
@@ -40,6 +47,10 @@ const ServiceRouter: React.FC = () => {
   } else {
     return(
       <>
+      <SEO
+        title='Service not found'
+        description='The service you are looking for is not available.'
+      />
         <div className='text-center mt-10 mb-10 '>
           <h1>Service not found</h1>
           <p>The service you are looking for is not available.</p>

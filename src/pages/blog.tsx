@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Search, Calendar, User, ChevronLeft, ChevronRight, Clock, Eye } from "lucide-react"
+import SEO from "@/components/SEO"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -160,6 +161,12 @@ export default function BlogPage() {
   }
 
   return (
+  <>  
+    <SEO 
+      title='Blog | VP Khambe & Associates'
+      description='CA Vinay Khambe provides expert Chartered Accountant services in Pune, offering tax audit, internal audit, statutory audit, GST audit, and more. Book your consultation today!'
+      keywords='Chartered Accountant Services in Pune, CA near me, Best CA in Pune, VP Khambe & Associates, CA Vinay Khambe'
+    />
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <motion.nav
@@ -436,5 +443,6 @@ export default function BlogPage() {
         </div>
       </div>
     </div>
+  </>
   )
 }

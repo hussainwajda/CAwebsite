@@ -3,9 +3,17 @@ import { Badge } from "@/components/ui/badge"
 import { CheckCircle, FileText, Users, Shield, Layers, BarChart, Target, Clock } from "lucide-react"
 import { Img } from "react-image"
 import { Link } from "react-router-dom"
+import SEO from "../SEO"
 
 export default function InternalAuditPage() {
   return (
+  <>
+    <SEO 
+      title='Internal Audit | VP Khambe & Associates'
+      description='We offer comprehensive internal audits to help businesses and organizations ensure compliance with internal controls, risk management, and operational efficiency.'
+      keywords='Internal Audit in Pune, CA near me, Best CA in Pune, VP Khambe & Associates, CA Vinay Khambe'
+      canonical='https://cavinaykhambe.in/services/internal-audit'
+    />
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <div className="relative h-56 bg-gradient-to-r from-blue-900 to-blue-700">
@@ -365,5 +373,6 @@ export default function InternalAuditPage() {
         </section>
       </div>
     </div>
+  </>  
   )
 }

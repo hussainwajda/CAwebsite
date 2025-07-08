@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ArrowUp } from "lucide-react"
+import { useLocation } from 'react-router-dom'
 
-function PageScroll() {
+export function PageScroll() {
+
     const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -20,4 +22,12 @@ function PageScroll() {
 )
 }
 
-export default PageScroll
+export function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}  

@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { FileText, Scale, Gavel, AlertCircle, ArrowRight, Shield, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEO from "../SEO";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -21,6 +22,12 @@ const staggerContainer = {
 
 export default function ScurnityAssessmentPage() {
   return (
+  <>
+  <SEO
+      title='Scrutiny & Appeals | VP Khambe & Associates'
+      description='Professional representation for tax scrutiny, assessments, and appeals at all levels, ensuring compliance and justice for taxpayers.'
+      keywords='Chartered Accountant Services in Pune, CA near me, Best CA in Pune, VP Khambe & Associates, CA Vinay Khambe'
+      />
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <motion.div 
@@ -391,5 +398,6 @@ export default function ScurnityAssessmentPage() {
         </motion.section>
       </div>
     </div>
+  </>
   )
 }

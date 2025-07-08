@@ -2,9 +2,16 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { FileText, CheckCircle, Calendar, ShieldAlert, TrendingUp, HelpCircle } from "lucide-react"
 import { Link } from "react-router-dom"
+import SEO from "../SEO"
 
 export default function GSTReturnFilingPage() {
   return (
+  <>  
+    <SEO 
+      title='GST Return Filing | VP Khambe & Associates'
+      description='We offer expert GST return filing services to ensure seamless compliance with GST regulations and maximize your input tax credit (ITC) benefits.'
+      keywords='GST Return Filing in Pune, CA near me, Best CA in Pune, VP Khambe & Associates, CA Vinay Khambe'
+    />
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <div className="relative h-56 bg-gradient-to-r from-blue-900 to-blue-500">
@@ -296,5 +303,6 @@ export default function GSTReturnFilingPage() {
         </section>
       </div>
     </div>
+    </>    
   )
 }

@@ -5,7 +5,7 @@ import Header from './header';
 import Footer from './footer';
 import Preloader from './preloader';
 import ContactWidget from './contact/contactWidget';
-import PageScroll from './scrollToTop';
+import { PageScroll }from './scrollToTop';
 
 function Layout() {
   const [loading, setLoading] = useState(true);

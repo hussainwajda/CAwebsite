@@ -3,9 +3,17 @@ import { Badge } from "@/components/ui/badge"
 import { CheckCircle, FileText, Receipt, Calculator, Shield, AlertCircle, Clock, TrendingUp, ClipboardList } from "lucide-react"
 import { Img } from "react-image"
 import { Link } from "react-router-dom"
+import SEO from "../SEO"
 
 export default function GSTAuditPage() {
   return (
+    <>
+    <SEO 
+      title='GST Audit | VP Khambe & Associates'
+      description='We offer comprehensive GST audits to help businesses and individuals understand their tax obligations and make informed decisions about their financial situation.'
+      keywords='GST Audit in Pune, CA near me, Best CA in Pune, VP Khambe & Associates, CA Vinay Khambe'
+      canonical='https://cavinaykhambe.in/services/gst-audit'
+    />
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <div className="relative h-56 bg-gradient-to-r from-emerald-900 to-emerald-700">
@@ -417,5 +425,6 @@ export default function GSTAuditPage() {
         </section>
       </div>
     </div>
+    </>
   )
 }

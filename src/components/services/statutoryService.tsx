@@ -3,9 +3,16 @@ import { Badge } from "@/components/ui/badge"
 import { CheckCircle, FileText, Scale, Building, ShieldCheck, BookOpen, ClipboardList } from "lucide-react"
 import { Img } from 'react-image';
 import { Link } from "react-router-dom";
+import SEO from "../SEO";
 
 export default function StatutoryAuditPage() {
   return (
+  <>
+  <SEO
+      title='Statutory Audit | VP Khambe & Associates'
+      description='We offer comprehensive statutory audits to help businesses and individuals understand their tax obligations and make informed decisions about their financial situation.'
+      keywords='Statutory Audit in Pune, CA near me, Best CA in Pune, VP Khambe & Associates, CA Vinay Khambe'
+      />
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <div className="relative h-56 bg-gradient-to-r from-emerald-900 to-emerald-700">
@@ -400,5 +407,6 @@ export default function StatutoryAuditPage() {
         </section>
       </div>
     </div>
+  </>
   )
 }

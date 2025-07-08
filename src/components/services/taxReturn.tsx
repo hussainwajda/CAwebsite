@@ -2,9 +2,17 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { FileText, Calculator, ShieldCheck, PieChart, Clock, AlertCircle, CheckCircle } from "lucide-react"
 import { Link } from "react-router-dom"
+import SEO from "../SEO"
 
 export default function IncomeTaxFilingPage() {
   return (
+  <>  
+    <SEO 
+      title='Income Tax Return Filing | VP Khambe & Associates'
+      description='We offer expert income tax return (ITR) filing services to maximize your refunds and ensure full compliance with tax regulations.'
+      keywords='Income Tax Return Filing in Pune, CA near me, Best CA in Pune, VP Khambe & Associates, CA Vinay Khambe'
+      canonical='https://cavinaykhambe.in/services/income-tax-filing'
+    />
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <div className="relative h-56 bg-gradient-to-r from-purple-900 to-purple-700">
@@ -354,5 +362,6 @@ export default function IncomeTaxFilingPage() {
         </section>
       </div>
     </div>
+  </>
   )
 }

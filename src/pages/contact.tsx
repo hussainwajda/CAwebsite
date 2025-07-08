@@ -9,6 +9,7 @@ import { MapPin, Clock, Mail, Phone, Send, CheckCircle } from "lucide-react"
 import { BsFacebook, BsInstagram, BsLinkedin, BsTwitterX } from "react-icons/bs"
 import { Link } from "react-router-dom"
 import { useLocation } from "react-router-dom"
+import SEO from "@/components/SEO"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -103,6 +104,13 @@ export default function ContactUsPage() {
 
 
   return (
+    <>
+    <SEO
+      title='Contact Us | VP Khambe & Associates | Schedule Your Consultation Now!'
+      description='Get in touch with our team of experts for any queries on tax, audit, or business advisory. Fast response and personalized service guaranteed.'
+      keywords='Chartered Accountant Services in Pune, CA near me, Best CA in Pune, VP Khambe & Associates, CA Vinay Khambe'
+      canonical='https://cavinaykhambe.in/contact'
+    />
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <motion.nav
@@ -362,5 +370,6 @@ export default function ContactUsPage() {
         </div>
       </section>
     </div>
+  </>  
   )
 }
