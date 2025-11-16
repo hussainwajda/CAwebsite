@@ -3,12 +3,12 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm ci
+        - npm ci --legacy-peer-deps
         # If you need a specific Node version, you can uncomment an install/use line below;
         # Amplify build images usually include multiple Node versions. If you have issues,
         # prefer setting NODE_VERSION in Amplify Console env vars.
         # - nvm install 18
-        - npm install --force
+        # - nvm use 18
     build:
       commands:
         - npm run build
