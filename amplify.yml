@@ -1,0 +1,22 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+        # If you need a specific Node version, you can uncomment an install/use line below;
+        # Amplify build images usually include multiple Node versions. If you have issues,
+        # prefer setting NODE_VERSION in Amplify Console env vars.
+        # - nvm install 18
+        - npm install --force
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    # Vite outputs to `dist` by default; point Amplify to that folder
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
